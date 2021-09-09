@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NotePaper from "./components/NotePaper";
+import Box from "./components/Box";
+import NotesList from "./components/NotesList";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Box
+        className="addScreen"
+        display="flex"
+        flexDirection="column"
+        height="100vh"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <NotePaper />
+        <Box className="icon" mb="4px">
+          <FaAngleDoubleDown size="36px" color="white" />
+        </Box>
+      </Box>
+      <Box
+        className="notesScreen"
+        display="flex"
+        flexDirection="column"
+        height="100vh"
+        alignItems="center"
+      >
+        <NotesList />
+      </Box>
+    </>
   );
 }
 
